@@ -1,0 +1,16 @@
+# we create a Docker image from souce code
+version: 4.26.1;
+services: 
+  imct-database:
+    image: postgres:16.1
+    container_name: imct-database
+    ports:
+      - 5434:5432 
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: imct
+    networks:
+      - nestjs-network
+networks:
+  nestjs-network:
